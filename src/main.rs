@@ -10,7 +10,6 @@ fn main() {
         println!("What formula do you want to solve?1. Pythagorean theorem 2. Quadratic equation 3. Factorials");
         let mut formula = String::new();
         io::stdin().read_line(&mut formula).expect("Failed to read line");
-        print!("{}",formula);
         // Convert input to integer
         let formula: i32 = formula.trim().parse().expect("Please type a number!");
         // excute the formula
@@ -56,7 +55,9 @@ fn pytheagorean(){
     let a: f32 = a.trim().parse().expect("An error has occured");
     let c: f32 = c.trim().parse().expect("An error has occured");
     let answer :f32 = (c*c-a*a).sqrt();
-    println!("The answer is {}", answer);}
+    println!("The answer is {}", answer);
+    start_again();    
+}
     else{
         println!("Please type yes or no!");
         pytheagorean()
@@ -88,6 +89,7 @@ fn quadratic(){
     }
     else{
         println!("One Value of x is {} another is {}",x1,x2);
+        start_again();
     }
 }
 fn factorial(){
